@@ -31,6 +31,8 @@ namespace CarLotSimulator
                 eddiesCar.IsDriveable = true;
             
             lot.Cars.Add(eddiesCar);
+            CarLot.numberOfCars += 1;
+            
             
             //Object Initializer Syntax
             var matteosCar = new Car()
@@ -43,22 +45,23 @@ namespace CarLotSimulator
                 IsDriveable = true
             };
             lot.Cars.Add(matteosCar);
-            
+            CarLot.numberOfCars ++;
             //Using the Constructor to allow parameter values to be placed inside properties
             var ghulisCar = new Car(2020, "Lambo", "Veneno", "wruum", "Get out the way", true);
             lot.Cars.Add(ghulisCar);
-
+            CarLot.numberOfCars  ++;
+            Console.WriteLine($"Cars in lot= {CarLot.numberOfCars}");
             // Calling specific methods
-            eddiesCar.MakeEngineNoise();
-            ghulisCar.MakeEngineNoise();
-            matteosCar.MakeEngineNoise();
+            //eddiesCar.MakeEngineNoise();
+            //ghulisCar.MakeEngineNoise();
+            //matteosCar.MakeEngineNoise();
 
            
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
-            foreach(var car in lot.Cars)
-            {
-                Console.WriteLine($" Year: {car.Year} Make: {car.Make} Model: {car.Model}");
-            }
+            //foreach(var car in lot.Cars)
+            //{
+            //    Console.WriteLine($" Year: {car.Year} Make: {car.Make} Model: {car.Model}");
+            //}
 
         }
     }
